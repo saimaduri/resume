@@ -1,0 +1,207 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% template from: Ganesh Mohan (http://about.me/ganesh.mohan)
+%
+% author: Sai Maduri
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx}
+% \usepackage{hyperref}
+\usepackage{fontawesome}
+\usepackage{setspace}
+\usepackage[margin=0.5in]{geometry}
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+% DEFINITIONS FOR RESUME
+
+\textheight=10in
+\pagestyle{fancy}
+\raggedright
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\hoffset}{-2pt}
+\setlength{\footskip}{20pt}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+\newcommand{\contact}[3]{
+\vspace*{3pt}
+\begin{center}
+{\LARGE \scshape {#1}}\\
+\vspace{5pt}
+#2 
+\vspace{2pt}
+#3
+\end{center}
+\vspace*{-8pt}
+}
+
+\newcommand{\header}[1]{{
+\hspace*{0pt}\vspace*{6pt} \textsc{#1}} \vspace*{-6pt} 
+\lineunder
+}
+
+\newcommand{\lineunder}{
+\vspace*{-8pt} \\ \hspace*{-3pt} 
+\hrulefill \\
+}
+
+\newcommand{\content}{
+\vspace*{2pt}
+}
+
+\newcommand{\school}[5]{\vspace*{2pt}% 
+\textbf{#1} \labelitemi #2 \hfill #3 \\ #4 \hfill #5
+\vspace*{5pt}
+}
+
+\newcommand{\college}[7]{
+\textbf{#1} \labelitemi \textbf{#2} \hfill #3 \\ #4 \hfill #7 \\ #5 \\ #6 \vspace*{5pt}
+}
+
+\newcommand{\employer}[4]{{
+\vspace*{2pt}%
+\textbf{#1} #2 \hfill #3\\ #4 \vspace*{2pt}}
+}
+
+\newcommand{\project}[3]{{
+\vspace*{2pt}% 
+\textbf{#1} #2 \hfill #3\vspace*{2pt}}
+}
+
+\renewcommand{\labelitemi}{
+$\vcenter{\hbox{\tiny$\bullet$}}$\hspace*{3pt}
+}
+
+\renewcommand{\labelitemii}{
+$\vcenter{\hbox{\tiny$\bullet$}}$\hspace*{-3pt}
+}
+
+\newenvironment{bullet-list-major}{
+\begin{list}{\labelitemii}{\setlength\leftmargin{9pt} 
+\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}\end{list}
+}
+
+\newenvironment{bullet-list-minor}{
+\begin{list}{\labelitemii}{\setlength\leftmargin{15pt} 
+\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}\end{list}
+}
+
+% END RESUME DEFINITIONS
+
+\begin{document}
+
+\small
+\smallskip
+\vspace*{-44pt}
+
+\contact{\textbf{Sai Maduri}}
+{\faPhone\ (908) 917-3705
+\labelitemi \faEnvelope\ \href{mailto:saicmaduri@gmail.com}{saicmaduri@gmail.com}
+\labelitemi \faLinkedin\ \href{https://www.linkedin.com/in/saimaduri/}{saimaduri}
+\labelitemi \faGithub\ \href{https://github.com/saimaduri}{@saimaduri}%
+\labelitemi \faLink\ \href{https://saimaduri.me}{saimaduri.me}
+}
+
+\vspace{4pt}
+\header{Education}
+    \college{Rutgers University}{New Brunswick, NJ}{September 2020 -- May 2024}
+    {\textit{Computer Science B.S.}}
+    {}{} 
+    {GPA: 3.9/4.0}
+    
+\vspace*{4pt}%
+\header{Highlighted Coursework}
+    \begin{bullet-list-major}
+    \item \textbf{Computer Science:} Data Structures, Computer Architecture, Software Methodology, Design \& Analysis of Computer Algorithms, Systems Programming, Principles of Programming Languages
+    \item \textbf{Mathematics:} Discrete Math I, Discrete Math II, Linear Algebra, Multivariable Calculus
+    \end{bullet-list-major}
+
+\vspace*{4pt}%
+\header{Skills}
+    \begin{bullet-list-major}
+    \item Programming languages: Java, Python, Web (HTML/CSS/JavaScript/Typescript), C++, OCaml, Prolog
+    \item Software: G Suite, Git, Android Studio, Unity, Firebase, React, Locust
+    % \item Non-Technical: Adaptability, Teamwork, Organizational Leadership, Fundraising
+    \end{bullet-list-major}
+    
+\vspace*{4pt}%
+\header{Work Experience}
+    \employer{Twitch}
+    {-- San Francisco, CA }{June 2022 -- August 2022}{Incoming Software Engineering Intern}
+    
+    \employer{Bloomberg LP}
+    {-- New York, NY}{May 2021 -- August 2021}{Software Engineering Intern}
+	\begin{bullet-list-minor}
+	\item Developed user-friendly product to load test any Bloomberg service, eliminating the need to write, package, and deploy any code
+	\item Delivered performance metrics for 100+ services over time across 6 internal engineering organizations to identify inefficient code, improve system scalability, and minimize the risk of service downtime by 15\%
+	\item Coordinated communications to promote the product and publicize new load testing standards by presenting across the department, bringing in 75+ active monthly users across 12 departments
+	\item Designed and implemented lightweight python micro-service to quickly retrieve IRD calculations for the Bloomberg Terminal's Yield and Spread Analysis screen, reducing user loading time by 12\%
+    \end{bullet-list-minor}
+
+    \employer{Bloomberg LP}
+    {-- Princeton, NJ}{June 2020 -- September 2020}{Software Engineering Intern}
+	\begin{bullet-list-minor}
+	\item Managed team of 3 interns in creating a Python library to facilitate faster automation building for data center ticketing pipelines
+	\item Assisted users with a simplified, consistent programming interface to interact with internal and external ticketing systems, allowing engineers to write automation scripts 67\% faster
+	\item Incorporated Scrum methodology to communicate updates with leadership and discuss inter-dependencies across the team
+	\item Participated in employee engagement activities including team-building events, community service, and learning and development
+    \end{bullet-list-minor}
+
+    \employer{Leverton}{-- New York, NY}{June 2019 -- August 2019}{Software Development Intern}
+	\begin{bullet-list-minor}
+	\item Designed a tool using decision tree regressors to predict Leverton's algorithms' reviewing time of corporate and legal documents
+	\item Implemented hyperparameter optimization and ensemble learning to increase the accuracy of the model up to 91.3\%
+	\item Assembled a web application to provide online clients with a price estimate for reviewing documents using said model
+	\item Presented the project to the engineering team for future integration to the Leverton Platform
+
+    \end{bullet-list-minor}
+
+\vspace*{4pt}%
+\header{Projects}
+    \project{ChanceMe}{-- Python, HTML/CSS/JavaScript, NodeJS }{}
+    \begin{bullet-list-minor}
+    \item Web application that predicts a student's chances of admission to a university's undergraduate program based on academic achievements with 73\% accuracy using machine learning models
+    \end{bullet-list-minor}
+
+    \project{TiltPong}{-- Java, HTML/CSS/JavaScript, NodeJS}{}
+	\begin{bullet-list-minor}
+	\item Developed an android application to play a multiplayer game of Pong in which phones act as controllers
+	\item Transmitted accelerometer and gyroscope sensor data from the phone to a web browser hosting the game to control the paddles
+    \end{bullet-list-minor}
+
+    \project{RendezVous}{-- Java, Firebase, Google APIs}{ }
+	\begin{bullet-list-minor}
+    \item Built an android application that takes the location of two phones and suggests neutral meeting points (restaurants, parks, etc.) between the two users using the Google Places and Google Maps APIs
+    \end{bullet-list-minor}
+
+\vspace*{4pt}%
+\header{Extra Curricular Activities}
+    \employer{South Brunswick Robotics}
+    {}{April 2019 -- June 2021}{President}
+	\begin{bullet-list-minor}
+    \item Competed in VEX Robotics, placing 11th worldwide in robot skills and 13th in the division at the international stage
+    \item Coordinated meetings and supervised the engineering process, robot design, and documentation of six teams throughout the year
+    \item Actively sought sponsors and executed fundraisers, raising \$7000+ annually to cover costs of electronics, metal, and competitions
+    \item Organized events to educate and promote interest in STEM for children of ages 6 to 14 throughout New Jersey
+    \item Spearheaded member tryout and training process by creating a brand new curriculum covering aspects of mechanical engineering, programming, and the design process
+    \end{bullet-list-minor}
+
+\end{document}
