@@ -6,7 +6,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass{article}
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage{fullpage}
 \usepackage[hidelinks]{hyperref}
@@ -16,10 +16,12 @@
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{graphicx}
-% \usepackage{hyperref}
 \usepackage{fontawesome}
 \usepackage{setspace}
-\usepackage[margin=0.5in]{geometry}
+\usepackage[left=0.5in,
+            right=0.5in,
+            top=0.6625in,
+            bottom=0.6625in,]{geometry}
 
 \newcommand\blfootnote[1]{%
   \begingroup
@@ -73,7 +75,7 @@
 }
 
 \newcommand{\college}[7]{
-\textbf{#1} \labelitemi \textbf{#2} \hfill #3 \\ #4 \hfill #7 \\ #5 \\ #6 \vspace*{5pt}
+\textbf{#1} \textbf{#2} \hfill #3 \\ #4 \hfill #7 \\ #5 \\ #6 \vspace*{5pt}
 }
 
 \newcommand{\employer}[4]{{
@@ -117,91 +119,82 @@ $\vcenter{\hbox{\tiny$\bullet$}}$\hspace*{-3pt}
 \labelitemi \faEnvelope\ \href{mailto:saicmaduri@gmail.com}{saicmaduri@gmail.com}
 \labelitemi \faLinkedin\ \href{https://www.linkedin.com/in/saimaduri/}{saimaduri}
 \labelitemi \faGithub\ \href{https://github.com/saimaduri}{@saimaduri}%
-\labelitemi \faLink\ \href{https://saimaduri.me}{saimaduri.me}
-}
+\labelitemi \faLink\ \href{https://saimaduri.me}{saimaduri.me}}
 
-\vspace{4pt}
+\vspace*{4pt}%
 \header{Education}
-    \college{Rutgers University}{New Brunswick, NJ}{September 2020 -- May 2024}
+    \college{Rutgers University}{}{September 2020 -- December 2023}
     {\textit{Computer Science B.S.}}
-    {}{} 
-    {GPA: 3.9/4.0}
+    {\begin{bullet-list-minor}
+        \item Scholarships \& Awards: SAS Excellence Award Scholarship, Dean's List (All Semesters), Honors CS
+        \item Notable Coursework: Operating Systems, Distributed Systems, Systems Programming, Computational Robotics
+    \end{bullet-list-minor}}{} 
+    {GPA: 3.96/4.00}
     
-\vspace*{4pt}%
-\header{Highlighted Coursework}
-    \begin{bullet-list-major}
-    \item \textbf{Computer Science:} Data Structures, Computer Architecture, Software Methodology, Design \& Analysis of Computer Algorithms, Systems Programming, Principles of Programming Languages
-    \item \textbf{Mathematics:} Discrete Math I, Discrete Math II, Linear Algebra, Multivariable Calculus
-    \end{bullet-list-major}
-
-\vspace*{4pt}%
-\header{Skills}
-    \begin{bullet-list-major}
-    \item Programming languages: Java, Python, Web (HTML/CSS/JavaScript/Typescript), C++, OCaml, Prolog
-    \item Software: G Suite, Git, Android Studio, Unity, Firebase, React, Locust
-    % \item Non-Technical: Adaptability, Teamwork, Organizational Leadership, Fundraising
-    \end{bullet-list-major}
-    
-\vspace*{4pt}%
+\vspace*{0pt}%
 \header{Work Experience}
+    \employer{Riot Games}
+\textbf{}    {| \textit{Java, JUnit, Maven, Jenkins, Groovy, Proprietary Technologies}}{May 2023 - August 2023}{Software Engineer Intern}
+    \begin{bullet-list-minor}
+    \item Revamped and enhanced the \textbf{League Platform Modernization} (LPM) team's Jenkins pipelines by adding \textbf{CI gates} and custom pre-commit scripts to lint and validate configuration changes, reducing failed service deploys by \textbf{16\%} 
+    \item Established comprehensive \textbf{unit} and \textbf{integration tests} with JUnit yielding \textbf{95\%} code coverage, providing clients with clear guidelines in integrating \textbf{LPM services} into their workflows to ensure reliability by validating end-to-end functionality
+    \end{bullet-list-minor}
+    
     \employer{Twitch}
-    {-- San Francisco, CA }{June 2022 -- August 2022}{Incoming Software Engineering Intern}
+    {| \textit{Go, TypeScript, Lambda, SQS, CLoudWatch, CDK}}{September 2022 - January 2023}{Software Engineer (Contract)}
+    \begin{bullet-list-minor}
+    \item Created a library of reusable \textbf{TypeScript} \textbf{CDK components} to allow engineers to peer Virtual Private Clouds (VPCs) across accounts and regions to ensure simplicity and security best practices in Twitch's Video Infrastructure organization
+    \item Implemented a \textbf{feature-flag} based traffic shift mechanism to route 100\% of YouTube Exporter jobs to the new \textbf{IVS workers} (see below) over a 5 day period, recording metrics and alarms in a CloudWatch dashboard to analyze service and user behavior
+    \item Deployed the new exporter globally and executed the traffic shift, exporting over \textbf{10,000 videos} from Twitch to YouTube daily 
+    \end{bullet-list-minor}
+    
+    \employer{Amazon Web Services (AWS)}
+    {| \textit{Go, ECS Fargate, SQS, CloudWatch, CDK}}{June 2022 -- August 2022}{Software Engineer Intern}
+    \begin{bullet-list-minor}
+    \item Prototyped the Amazon Interactive Video Service (IVS) YouTube Exporter post-processing worker's new architecture from AWS Batch to ECS Fargate using \textbf{Go} and \textbf{Typescript} to decrease costs and increase scalability, improving worker throughput by 12\%
+    \item Built out robust and scalable CDK infrastructure to support the product, including CloudWatch alarms, \textbf{metrics}, and \textbf{log queries} to flag and identify unexpected behavior and \textbf{ECS auto-scaling} to scale the service to match user behavior in real-time
+    \end{bullet-list-minor}
     
     \employer{Bloomberg LP}
-    {-- New York, NY}{May 2021 -- August 2021}{Software Engineering Intern}
+    {| \textit{Python, Locust, TypeScript, React, D3.js, SQL}}{May 2021 -- August 2021}{Software Engineer Intern}
 	\begin{bullet-list-minor}
-	\item Developed user-friendly product to load test any Bloomberg service, eliminating the need to write, package, and deploy any code
-	\item Delivered performance metrics for 100+ services over time across 6 internal engineering organizations to identify inefficient code, improve system scalability, and minimize the risk of service downtime by 15\%
-	\item Coordinated communications to promote the product and publicize new load testing standards by presenting across the department, bringing in 75+ active monthly users across 12 departments
-	\item Designed and implemented lightweight python micro-service to quickly retrieve IRD calculations for the Bloomberg Terminal's Yield and Spread Analysis screen, reducing user loading time by 12\%
+    \item Engineered a paralellized user-friendly product with \textbf{Python} and \textbf{Locust} to load test \textbf{internal APIs}, eliminating the need to write, package, and deploy testing code, leading to a \textbf{33\%} decrease in load testing time and \textbf{37\%} increase in load testing coverage
+	\item Architected a \textbf{KPI Dashboard} to provide usage statistics and deliver performance metrics for \textbf{650+ APIs} and services across \textbf{6 internal engineering organizations}, utilized by \textbf{80+} active monthly users resulting in a \textbf{2.8\%} decrease in service downtime
     \end{bullet-list-minor}
 
     \employer{Bloomberg LP}
-    {-- Princeton, NJ}{June 2020 -- September 2020}{Software Engineering Intern}
+    {| \textit{Python, PyTest, Proprietary Technologies}}{June 2020 -- September 2020}{Software Engineer Intern}
 	\begin{bullet-list-minor}
-	\item Managed team of 3 interns in creating a Python library to facilitate faster automation building for data center ticketing pipelines
-	\item Assisted users with a simplified, consistent programming interface to interact with internal and external ticketing systems, allowing engineers to write automation scripts 67\% faster
-	\item Incorporated Scrum methodology to communicate updates with leadership and discuss inter-dependencies across the team
-	\item Participated in employee engagement activities including team-building events, community service, and learning and development
+	\item Designed and implemented a lightweight \textbf{Python micro-service} to quickly retrieve \textbf{IRD calculations} for the Bloomberg Terminal's Yield and Spread Analysis (YAS) page, removing legacy dependencies and reducing average user loading time by \textbf{12\%}
+	\item Provided users with a simplified, consistent \textbf{Python library interface} to interact with internal and external ticketing systems, allowing engineers to write automation scripts to raise alerts and create Jira tickets\textbf{ 67\%} faster 
     \end{bullet-list-minor}
 
-    \employer{Leverton}{-- New York, NY}{June 2019 -- August 2019}{Software Development Intern}
-	\begin{bullet-list-minor}
-	\item Designed a tool using decision tree regressors to predict Leverton's algorithms' reviewing time of corporate and legal documents
-	\item Implemented hyperparameter optimization and ensemble learning to increase the accuracy of the model up to 91.3\%
-	\item Assembled a web application to provide online clients with a price estimate for reviewing documents using said model
-	\item Presented the project to the engineering team for future integration to the Leverton Platform
-
-    \end{bullet-list-minor}
 
 \vspace*{4pt}%
 \header{Projects}
-    \project{ChanceMe}{-- Python, HTML/CSS/JavaScript, NodeJS }{}
+    \project{Multithreaded Trading Engine}{| \textit{Java, Spring, JUnit}}{}
     \begin{bullet-list-minor}
-    \item Web application that predicts a student's chances of admission to a university's undergraduate program based on academic achievements with 73\% accuracy using machine learning models
+    \item Designed and created a \textbf{multithreaded} trading engine with \textbf{Java Spring}, capable of handling real-time order processing via HTTP requests and matching/order execution through the use of robust \textbf{data structures} and \textbf{FIFO} and \textbf{Pro Rata} algorithms 
+    \item Conducted stress tests on the order book and engine to precisely quantify performance, finding averages of \textbf{0.54 microseconds} per order book update and \textbf{5.37 microseconds} per engine update over a \textbf{1 million} order load
     \end{bullet-list-minor}
-
-    \project{TiltPong}{-- Java, HTML/CSS/JavaScript, NodeJS}{}
-	\begin{bullet-list-minor}
-	\item Developed an android application to play a multiplayer game of Pong in which phones act as controllers
-	\item Transmitted accelerometer and gyroscope sensor data from the phone to a web browser hosting the game to control the paddles
+    \project{Augmented Reality Sudoku Solver}{| \textit{Python, OpenCV, TensorFlow, Sklearn}}{}
+    \begin{bullet-list-minor}
+    \item Developed an AR Sudoku Solver using \textbf{Python}, enabling real-time overlay of solutions onto video feeds of Sudoku boards
+    \item Employed \textbf{TensorFlow} and \textbf{Sklearn} to train a custom model capable of recognizing Sudoku digits with \textbf{97\%} accuracy; utilized \textbf{OpenCV} to extract and overlay digits on the scanned grid, successfully identifying individual cells and their contents
     \end{bullet-list-minor}
-
-    \project{RendezVous}{-- Java, Firebase, Google APIs}{ }
-	\begin{bullet-list-minor}
-    \item Built an android application that takes the location of two phones and suggests neutral meeting points (restaurants, parks, etc.) between the two users using the Google Places and Google Maps APIs
+    \project{Remote Object Store}{| \textit{Java, Maven}}{}
+    \begin{bullet-list-minor}
+        \item Conceptualized and implemented a remote object store, enabling efficient data storage through \textbf{client-server} communication
+        \item Developed support for seamless \textbf{PUT, GET, REMOVE}, and \textbf{LIST} operations and corresponding server responses with Java
+        \item Constructed a custom, lightweight protocol over \textbf{TCP/IP} for data transfer to minimize latency and maximize data throughput
     \end{bullet-list-minor}
-
+    
 \vspace*{4pt}%
-\header{Extra Curricular Activities}
-    \employer{South Brunswick Robotics}
-    {}{April 2019 -- June 2021}{President}
-	\begin{bullet-list-minor}
-    \item Competed in VEX Robotics, placing 11th worldwide in robot skills and 13th in the division at the international stage
-    \item Coordinated meetings and supervised the engineering process, robot design, and documentation of six teams throughout the year
-    \item Actively sought sponsors and executed fundraisers, raising \$7000+ annually to cover costs of electronics, metal, and competitions
-    \item Organized events to educate and promote interest in STEM for children of ages 6 to 14 throughout New Jersey
-    \item Spearheaded member tryout and training process by creating a brand new curriculum covering aspects of mechanical engineering, programming, and the design process
-    \end{bullet-list-minor}
+\header{Skills}
+    \begin{bullet-list-major}
+    \item Programming Languages: Java, Python, Web (HTML/CSS/JavaScript/TypeScript), C, C++, Go, SQL
+    \item Frameworks/Technologies: Git, JUnit, Spring, Flask, Pytest, Locust, React, Node.js, Unix, D3.js , Matplotlib
+    \item Developer Tools: Amazon Web Services, Jenkins, IntelliJ, Docker, Visual Studio Code, Eclipse, Postman, MacOS
+    \end{bullet-list-major}
 
 \end{document}
